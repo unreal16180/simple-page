@@ -104,12 +104,15 @@ mark.search-hit{
 }
 
 .fab-side{
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 12px;
+  top: auto;
+  transform: none;
+
   width: 46px;
   height: 46px;
   font-size: 26px;
   line-height: 1;
+
   display: grid;
   place-items: center;
 }
