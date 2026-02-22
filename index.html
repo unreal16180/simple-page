@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Documento infinito</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-dark">
+  <!-- Contenedor principal (sin encabezado) -->
+  <main id="reader" class="reader" tabindex="0" aria-label="Lector de documento">
+    <article id="content" class="content" aria-label="Contenido del documento">
+      <!-- Se genera desde JS -->
+    </article>
+  </main>
+
+  <!-- Botones flotantes transparentes: anterior/siguiente pantalla -->
+  <button id="btnPrev" class="fab fab-side fab-left" aria-label="Página anterior" title="Página anterior (una pantalla)">
+    ‹
+  </button>
+  <button id="btnNext" class="fab fab-side fab-right" aria-label="Página siguiente" title="Página siguiente (una pantalla)">
+    ›
+  </button>
+
+  <!-- Botón flotante para abrir panel -->
+  <button id="btnTools" class="fab fab-tools" aria-label="Herramientas" title="Herramientas">
+    ☰
+  </button>
+
+  <!-- Panel flotante -->
+  <section id="panel" class="panel" aria-label="Panel de herramientas" aria-hidden="true">
+    <div class="panel-header">
+      <div class="panel-title">Herramientas</div>
+      <button id="btnClosePanel" class="panel-close" aria-label="Cerrar">✕</button>
+    </div>
+
+    <!-- Buscador -->
+    <div class="panel-block">
+      <label class="label" for="searchInput">Buscar palabra</label>
+      <div class="row">
+        <input id="searchInput" class="input" type="search" placeholder="Escribe para buscar…" autocomplete="off" />
+        <button id="btnSearchPrev" class="mini" title="Anterior coincidencia" aria-label="Anterior coincidencia">↑</button>
+        <button id="btnSearchNext" class="mini" title="Siguiente coincidencia" aria-label="Siguiente coincidencia">↓</button>
+      </div>
+      <div id="searchMeta" class="meta">0 coincidencias</div>
+    </div>
+
+    <!-- Ir a página -->
+    <div class="panel-block">
+      <label class="label" for="pageInput">Ir a página</label>
+      <div class="row">
+        <input id="pageInput" class="input" type="number" min="1" step="1" placeholder="Ej: 3" />
+        <button id="btnGoPage" class="mini">Ir</button>
+      </div>
+      <div id="pageMeta" class="meta">Páginas cargadas: <span id="pageCount">0</span></div>
+    </div>
+
+    <!-- Tipografía -->
+    <div class="panel-block">
+      <label class="label" for="fontSize">Tamaño de fuente</label>
+      <input id="fontSize" class="range" type="range" min="14" max="26" value="18" />
+      <div class="meta"><span id="fontSizeVal">18</span> px</div>
+    </div>
+
+    <div class="panel-block">
+      <label class="label" for="fontWeight">Grosor de fuente</label>
+      <select id="fontWeight" class="select">
+        <option value="100">100 (Ultra fino)</option>
+        <option value="200">200 (Muy fino)</option>
+        <option value="300">300 (Fino)</option>
+        <option value="400" selected>400 (Normal)</option>
+        <option value="500">500 (Medio)</option>
+        <option value="600">600 (Semi-negrita)</option>
+        <option value="700">700 (Negrita)</option>
+      </select>
+    </div>
+
+    <!-- Modo (por defecto oscuro, pero dejo toggle por si lo quieres) -->
+    <div class="panel-block">
+      <label class="label">Tema</label>
+      <div class="row">
+        <button id="btnTheme" class="btn">
+          Cambiar a claro
+        </button>
+      </div>
+      <div class="meta">Oscuro está activado por defecto.</div>
+    </div>
+
+    <div class="panel-footnote">
+      Tip: También puedes usar <b>PgUp/PgDn</b>, <b>Espacio</b> y <b>Shift+Espacio</b>.
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
