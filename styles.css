@@ -122,9 +122,16 @@ mark.search-hit{
 
 .fab-tools{
   left: 50%;
-  bottom: 16px;
   right: auto;
-  transform: translateX(-50%);
+  bottom: 16px;                 /* herramientas pegado abajo */
+  transform: translateX(-50%);  /* centrado */
+  width: 52px;
+  height: 52px;
+  font-size: 22px;
+  display: grid;
+  place-items: center;
+  opacity: 0.92;
+  z-index: 30;                  /* siempre encima */
 }
 
 /* Panel */
