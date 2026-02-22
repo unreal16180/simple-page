@@ -35,10 +35,25 @@ let hits = [];
 let hitIndex = -1;
 let lastQuery = "";
 
-/* Texto demo (reemplázalo por tu contenido) */
-const demoParagraphs = [
-  "primeras palabras"
-];
+// ===== CARGAR TEXTO DESDE ARCHIVO TXT =====
+
+async function cargarLibro() {
+  const res = await fetch("libro.txt");
+  const texto = await res.text();
+
+  const parrafos = texto.split(/\n\s*\n/);
+
+  content.innerHTML = "";
+
+  parrafos.forEach(p => {
+    const el = document.createElement("p");
+    el.textContent = p.trim();
+    content.appendChild(el);
+  });
+}
+
+// cargar al iniciar
+cargarLibro();
 
 function makeLoremBlock(mult = 1){
   const base = [
