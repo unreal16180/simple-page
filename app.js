@@ -37,16 +37,12 @@ let lastQuery = "";
 
 /* Texto demo (reemplázalo por tu contenido) */
 const demoParagraphs = [
-  "Este es un documento de lectura con texto justificado, pensado para pantalla completa. El contenido es responsivo y se adapta al ancho de tu dispositivo, tanto en PC como en celular.",
-  "El sistema simula un infinite scrolling agregando páginas conforme te acercas al final. Además, tienes botones de navegación que avanzan o retroceden exactamente una pantalla visible, evitando saltos grandes.",
-  "Incluye un panel flotante para buscar palabras, ir a una página específica, y ajustar el tamaño y grosor de la fuente, incluso con opciones muy finas."
+  "primeras palabras"
 ];
 
 function makeLoremBlock(mult = 1){
   const base = [
-    "Cuando el texto es largo, la lectura mejora con un ancho cómodo y una altura de línea adecuada. Este lector busca parecer un documento, sin encabezados que consuman espacio.",
-    "La navegación por pantalla visible reduce errores comunes: en lugar de saltar demasiado, se desplaza el equivalente a la altura del viewport menos un margen.",
-    "Puedes personalizar la tipografía desde el panel: tamaño y grosor. Si tu fuente soporta pesos finos, notarás el cambio claramente."
+    "findel texto"
   ];
   let out = [];
   for(let i=0;i<3*mult;i++){
@@ -306,9 +302,9 @@ searchInput.addEventListener("keydown", (e) => {
 /* ==========
    Infinite scrolling
    ========== */
-reader.addEventListener("scroll", () => {
-  loadMoreIfNeeded();
-});
+// reader.addEventListener("scroll", () => {
+//   loadMoreIfNeeded();
+// });
 
 /* ==========
    Init
